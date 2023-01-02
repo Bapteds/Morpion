@@ -1,0 +1,44 @@
+/* #id{
+   .class{
+*/
+
+
+body{
+    display: flex;
+    width: 916px;
+}
+
+.box #b1{
+    background-color: lightblue;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.5cm;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 100px;
+    width: 200px;
+    border-color: grey;
+}
+#b1:hover{
+    color: white;
+    background-color: lightgray;
+
+}
+
+
+.box{
+    width: 500px;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
+
+#boutton{
+    width: auto;
+
+}
+
+#rectangle #c1{
+    width: 800px;
+}
