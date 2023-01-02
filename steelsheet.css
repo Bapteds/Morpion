@@ -16,13 +16,14 @@ body{
     margin-top: 100px;
     margin-bottom: 100px;
     border-radius: 100px;
-    width: 200px;
+    width: 210px;
     border-color: grey;
 }
 #b1:hover{
     color: white;
     background-color: lightgray;
-
+    width: 220px;
+    transition:width 1s, height 1s, background-color 1s, transform 1s;
 }
 
 
