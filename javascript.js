@@ -15,20 +15,8 @@
 
 //###--CODE--###\\
 
-//function that
 const choices = ['Croix', 'Cercle'];
 const grid = [ ["", "", ""], ["", "", ""], ["", "", ""]];
-
-const displayGrid = () => {
-    // Affiche la grille dans le navigateur
-}
-
-const playturn = () => {
-    // Demande à l'utilisateur où il souhaite jouer et met à jour la grille en conséquence
-    // Vérifie si le jeu est terminé
-}
-
-
 
 // isAvailable = Permite to verificate the value of the player. If it's lower or bigger than 1 and 2, the function return an error
 // Otherwise the game can start
@@ -48,3 +36,46 @@ function isAvailable(){
         console.log('Error');
 }
 
+// variables that determines the case of the computerselection
+const getComputerCase = Math.floor(Math.random() * 9);
+
+
+
+
+//This two functions are used to determine with players start the game. 
+function randomInt(){
+     return Math.floor(Math.random() * max);
+}
+function randomStart(){
+    value=randomInt(2);
+    if (value==2){
+        alert ("L'ordinateur commence");
+        
+    }
+    else {
+        alert ("Le joueur commence")
+    }
+}
+
+
+
+
+
+function playerStart(){
+
+}
+
+
+function computerStart(){
+
+}
+
+
+let displayGrid = () => {
+
+}
+
+const playturn = () => {
+    // Demande à l'utilisateur où il souhaite jouer et met à jour la grille en conséquence
+    // Vérifie si le jeu est terminé
+}

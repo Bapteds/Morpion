@@ -8,7 +8,7 @@ body{
     width: 916px;
 }
 
-.box #b1{
+#b1{
     background-color: lightblue;
     color: black;
     font-family: 'Courier New', Courier, monospace;
@@ -37,4 +37,16 @@ body{
 
 #rectangle #c1{
     width: 800px;
+}
+
+/* GRID */
+
+td{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+table{
+    border-collapse: collapse;
 }
