@@ -8,18 +8,3 @@
 
 //###--CODE--###\\
 
-test2=0;
-test1=1;
-
-
-function testfonct(){
-    alert('SALE NEGRO');
-
-
-    let canvas = document.getElementById('c1');
-    let ctx = canvas.getContext('2d');
-    
-    ctx.strokeStyle = '#4444CC'; //Nuance de bleu
-    ctx.strokeRect(10, 25, 200, 100);
-}
-

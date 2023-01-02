@@ -14,7 +14,19 @@
 </head>
 
 <body>
-   <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
+    random1234
+    random2
+    2
+    <section class="box">
+        <div id="boutton">
+            <input type="button" value="Démarrer 2" onclick="testfonct();" id="b1" />
+        </div>
+        <div id="rectangle">
+            <canvas id='c1' style='background-color: #fff;'></canvas>
+        </div>
+    </section>
+    </section>
 </body>
 
 </html>
