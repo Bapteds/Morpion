@@ -20,8 +20,8 @@
 </header>
 
 <body>
-    <input type="button" value="start" onclick="" id="btn-start" />
-    <input type="button" value="reset" onclick="grillReset();" id="btn-reset" />
+    <input type="button" value="start" onclick="isAvailable()" id="btn-start" />
+    <input type="button" value="reset" onclick="boutonTableau();" id="btn-reset" />
 
     <section class="score">
         <div id="score_j">
@@ -51,20 +51,43 @@
     </table>
 
     <div id="overlay">
-        <div id ="container-icon">
-            <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="test-6 h-6" width = 40 height = 40>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+        <div id="container">
+          <div class="item icon">
+            <div id="content">
+                <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="{1.5}"
+              stroke="currentColor"
+              className="w-6 h-6"
+              width="40"
+              height="40"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+              />
+            </svg>
+            <div id="circle"></div>
             </div>
-        </div>
-
-        <div id ="content">
+            
+          </div>
+    
+          <div class="item text">
             <h2>Choose your weapon</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos aperiame ratione veritatis atque!</p>
-        
-        <select">
-            <option value="choice1">Croix<option>
-            <option value="choice2">Cercle</option>
-        <select>
+            <p>Choose between the O or the X, it won't affect the battle I swear</p>
+          </div>
+          <div class="item input">
+            <select>
+              <option value="cercle">O</option>
+              <option value="croix">X</option>
+            </select>
+          </div>
+          <div class="item button">
+            <button></button>
+          </div>
         </div>
     </div>
 

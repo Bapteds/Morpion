@@ -21,7 +21,7 @@
 
 // VARIABLES
 const choices = ['Croix', 'Cercle'];
-let grid = [ ["", "", ""], ["", "", ""], ["", "", ""]];
+let grid = [ [null, null, null], [null, null, null], [null, null, null]];
 
 // STARTER ###############################################################################################################################
 
@@ -31,6 +31,39 @@ const btnStart = document.querySelector('#btn-start'); // Un seuk élément qui 
 const btnReset = document.querySelector('#btn-reset');
 // let compteur = document.querySelector(score);
 
+function grillReset(){
+    if (grid !==null){
+        alert ("Grille réinitialisée");
+        return grid=[ [null, null, null], [null, null, null], [null, null, null]],isAvailable();   
+    }
+}
+
+// ########################################################################################################################################
+
+
+// OVERLAY 
+const overlay = document.getElementById('overlay');
+const closeButton = document.getElementById('closeButton');
+
+btnStart.addEventListener('click', () => {
+    overlay.style.display = 'block';
+})
+
+overlay.addEventListener('click', (event) => {
+    if (!event.target.closest('#container')) {
+        overlay.style.display = 'none';
+    }
+})
+
+
+
+
+
+// FUNCTION MORPION ######################################################################################################################
+let playercounter=0
+let computercount=0
+
+
 // isAvailable = Permite to verificate the value of the player. If it's lower or bigger than 1 and 2, the function return an error
 // Otherwise the game can start
 function isAvailable(){
@@ -39,11 +72,11 @@ function isAvailable(){
     if (choix == 1 || choix == 2 || choix == 3){
         if (choix==1){
             console.log('Vous avez choisi : ' + choices[0]);
-            return playerselection=choices[0],computreselection=choices[1], randomStart();
+            return  randomStart(choices[0],computreselection=choices[1]);
         }    
         else if (choix==2){
             console.log('Vous avez choisi : ' + choices[1]);
-            return playerselection=choices[1],computreselection=choices[0], randomStart();
+            return randomStart(choices[1],computerselection=choices[0]);
         }
         else if (choix==3){
             return 0 ;
@@ -62,65 +95,98 @@ const getComputerCase = Math.floor(Math.random() * 9);
 function randomInt(){
      return Math.floor(Math.random() * 9);
 }
-function randomStart(){
-    value=randomInt(2);
+function randomStart(choix,computer){
+    value=randomInt(9);
     if (value == 2){
         alert ("L'ordinateur commence");
-        computerStart(1);
+        return computerStart(choix,computer);
     }
-    else {
+    else { // A modifier
         alert ("Le joueur commence")
-        playerStart(1);
+        return playerStart(choix),computer;
     }
 }
 
 
-function grillReset(){
-    if (grid !==null){
-        alert ("Grille réinitialisée");
-        return grid=[ ["", "", ""], ["", "", ""], ["", "", ""]],isAvailable();   
+function playerStart(choix){
+    playercounter=playercounter+1
+    return boutonTableau(choix);
+}
+
+
+function computerStart(computer){
+    computercount=computercount+1
+    return boutonTableau(computer);
+}
+
+function testmat(x,y,choix,computer){ // x => La hauteur dans mon tableau.
+    if (grid[x][y]!==null){
+        alert('Déja utilisé');
     }
-}
-
-// ########################################################################################################################################
-
-
-function playerStart(compt){
-    playercount=playercount+compt
-
-}
-
-
-function computerStart(compt){
-    computercount=computercount+compt
-}
-
-// OVERLAY 
-const overlay = document.getElementById('overlay');
-
-btnStart.addEventListener('click', () => {
-    overlay.style.display = 'block';
-})
-
-overlay.addEventListener('click', (event) => {
-    if (!event.target.closest('#content')) {
-        overlay.style.display = 'none';
-    }
-})
-
-
-
-function testmat(x){
-    grid.splice(x,1,['rond',null,null]);  // splice(Entre la 1er et 3em liste ,Entre la 1er et 3em place , ['objet',objet,objet])
+    else
+        grid[x][y]=choix;
     console.log(grid);
+    console.log(computercount);
+    console.log(playercounter);
+    if (computercount>=playercounter){
+        playerStart(choix);
+    }
+    else if (playercounter>computercount){
+        computerStart(computer);
+    }
+}
+
+function boutonTableau(choix){
+let G1= document.getElementById("1");
+G1.onclick=function () {
+    console.log(1);
+    G1.style.background="red";
+    return testmat(0,0,choix);}
+
+let M1= document.getElementById("2");
+    M1.onclick=function () {
+        console.log(1);
+        return testmat(0,1,choix);}
+
+let D1= document.getElementById("3");
+    D1.onclick=function () {
+        console.log(1);
+        return testmat(0,2,choix);}
+
+let G2= document.getElementById("4");
+    G2.onclick=function () {
+    console.log(1);
+    return testmat(1,0,choix);}
+
+let M2= document.getElementById("5");
+    M2.onclick=function () {
+        console.log(1);
+        return testmat(1,1,choix);}
+
+let D2= document.getElementById("6");
+    D2.onclick=function () {
+        console.log(1);
+        return testmat(1,2,choix);}
+
+let G3= document.getElementById("7");
+    G3.onclick=function () {
+    console.log(1);
+    return testmat(2,0,choix);}
+
+let M3= document.getElementById("8");
+    M3.onclick=function () {
+        console.log(1);
+        return testmat(2,1);}
+
+let D3= document.getElementById("9");
+    D3.onclick=function () {
+        console.log(1);
+        return testmat(2,2);}
 }
 
 
-let testB1= document.getElementById("1");
-    testB1.onclick=function () {
-    console.log(1);
-    return testmat(2);}
 
 
-    
 
+
+        
