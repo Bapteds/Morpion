@@ -8,35 +8,68 @@
 <head>
     <meta charset="utf-8">
     <title>Morpion</title>
-    <meta name="Morpion" content="Le site permet de jouer au morpion">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="testmorpion" content="Le site permet de jouer au morpion">
+    <meta name="testiewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="steelsheet.css">
 </head>
 <header>
     <h1>Morpion</h1>
-
 </header>
+
 <body>
-    <script src="javascript.js"></script>
-    <input type="button" value="Démarrer" onclick="isAvailable();" id="b1" />
+    <input type="button" value="start" onclick="" id="btn-start" />
+    <input type="button" value="reset" onclick="grillReset();" id="btn-reset" />
+
+    <section class="score">
+        <div id="score_j">
+            <h4>Player :</h4>
+        </div>
+        <div id="score_c">
+            <h4>Computer :</h4>
+        </div>
+    </section>
+
     <table>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="button" value="" id="1" name="test" /></td>
+            <td><input type="button" value="" id="2" name="test" /></td>
+            <td><input type="button" value="" id="3" name="test" /></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="button" value="" id="4" name="test"/></td>
+            <td><input type="button" value="" id="5" name="test"/></td>
+            <td><input type="button" value="" id="6" name="test"/></td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="button" value="" id="7" name="test"/></td>
+            <td><input type="button" value="" id="8" name="test"/></td>
+            <td><input type="button" value="" id="9" name="test"/></td>
         </tr>
     </table>
 
+    <div id="overlay">
+        <div id ="container-icon">
+            <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="test-6 h-6" width = 40 height = 40>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+            </div>
+        </div>
+
+        <div id ="content">
+            <h2>Choose your weapon</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos aperiame ratione veritatis atque!</p>
+        
+        <select">
+            <option value="choice1">Croix<option>
+            <option value="choice2">Cercle</option>
+        <select>
+        </div>
+    </div>
+
+
+    <script src="javascript.js"></script>
 </body>
 
 </html>

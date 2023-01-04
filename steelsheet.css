@@ -1,7 +1,9 @@
-/* #id{
-   .class{
-*/
-
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     height: 100vh;
@@ -9,47 +11,114 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: rgb(239, 245, 245);
 }
 
-#b1{
-    background-color: lightblue;
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.5cm;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 100px;
-    width: 210px;
-    border-color: grey;
+#btn-start{
+    margin-top: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 8px 24px;
+    background: rgb(37, 99, 235);
+    opacity: 1;
+    color: white;
+    font-size: medium;
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
 }
 
-
-
-.box{
-    width: 500px;
-    align-items: center;
-    flex-direction: row;
-    display: flex;
+#btn-reset{
+    margin-top: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 8px 24px;
+    background: #2563eb;
+    opacity: 1;
+    color: white;
+    font-size: medium;
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
 }
 
-
-#boutton{
-    width: auto;
-
+#btn-start:hover{
+    /* background-color:green;
+    transition-duration: 400ms; */
+    background: #1d4ed8;
+    transition-duration: .15s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 
-#rectangle #c1{
-    width: 800px;
+#btn-reset:hover{
+    background-color:#dc2626;
+    transition-duration: .15s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 /* GRID */
 
 td{
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
+    width: 55px;
+    height: 55px;
+    border: 5px solid black;
 }
 
 table{
+    margin-top: 30px;
+    height: 450px;
+    width: 450px;
     border-collapse: collapse;
+}
+
+
+
+/* OVERLAY */
+#overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+#content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    border-radius: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+#content select{
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+}
+
+/*
+.btn-game{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(239, 245, 245);
+    border-width : 0;
+    border-left-width : 0;
+    display: flex;
+}
+*/
+
+input[name="test"]{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(239, 245, 245);
+    border-width : 0;
+    border-left-width : 0;
+    display: flex;
 }
