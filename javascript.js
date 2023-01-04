@@ -18,6 +18,8 @@
 const choices = ['Croix', 'Cercle'];
 const grid = [ ["", "", ""], ["", "", ""], ["", "", ""]];
 
+// STARTER ###############################################################################################################################
+
 // isAvailable = Permite to verificate the value of the player. If it's lower or bigger than 1 and 2, the function return an error
 // Otherwise the game can start
 function isAvailable(){
@@ -26,11 +28,11 @@ function isAvailable(){
     if (choix == 1 || choix == 2){
         if (choix==1){
             console.log('Vous avez choisi : ' + choices[0]);
-            return playerselection=choices[0],computreselection=choices[1];
+            return playerselection=choices[0],computreselection=choices[1], randomStart();
         }    
         else
             console.log('Vous avez choisi : ' + choices[1]);
-            return playerselection=choices[1],computreselection=choices[0];
+            return playerselection=choices[1],computreselection=choices[0], randomStart();
     }   
     else 
         console.log('Error');
@@ -39,26 +41,23 @@ function isAvailable(){
 // variables that determines the case of the computerselection
 const getComputerCase = Math.floor(Math.random() * 9);
 
-
-
-
 //This two functions are used to determine with players start the game. 
 function randomInt(){
-     return Math.floor(Math.random() * max);
+     return Math.floor(Math.random() * 9);
 }
 function randomStart(){
     value=randomInt(2);
-    if (value==2){
+    if (value == 2){
         alert ("L'ordinateur commence");
-        
+        computerStart();
     }
     else {
         alert ("Le joueur commence")
+        playerStart();
     }
 }
 
-
-
+// ########################################################################################################################################
 
 
 function playerStart(){
