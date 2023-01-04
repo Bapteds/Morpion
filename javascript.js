@@ -53,6 +53,8 @@ overlay.addEventListener('click', (event) => {
     if (!event.target.closest('#container')) {
         overlay.style.display = 'none';
     }
+
+overlay.addEventListener('')
 })
 
 
@@ -60,8 +62,9 @@ overlay.addEventListener('click', (event) => {
 
 
 // FUNCTION MORPION ######################################################################################################################
-let playercounter=0
-let computercount=0
+let playercounter=0;
+let computercount=0;
+
 
 
 // isAvailable = Permite to verificate the value of the player. If it's lower or bigger than 1 and 2, the function return an error
@@ -72,11 +75,11 @@ function isAvailable(){
     if (choix == 1 || choix == 2 || choix == 3){
         if (choix==1){
             console.log('Vous avez choisi : ' + choices[0]);
-            return  randomStart(choices[0],computreselection=choices[1]);
+            return randomStart(choix=choices[0],computer=choices[1]);
         }    
         else if (choix==2){
             console.log('Vous avez choisi : ' + choices[1]);
-            return randomStart(choices[1],computerselection=choices[0]);
+            return randomStart(choix=choices[1],computer=choises[0]);
         }
         else if (choix==3){
             return 0 ;
@@ -88,9 +91,11 @@ function isAvailable(){
     }
 }
 
+
+
+
 // variables that determines the case of the computerselection
 const getComputerCase = Math.floor(Math.random() * 9);
-
 //This two functions are used to determine with players start the game. 
 function randomInt(){
      return Math.floor(Math.random() * 9);
@@ -99,24 +104,23 @@ function randomStart(choix,computer){
     value=randomInt(9);
     if (value == 2){
         alert ("L'ordinateur commence");
-        return computerStart(choix,computer);
+        return computerStart(computer,choix);
     }
     else { // A modifier
         alert ("Le joueur commence")
-        return playerStart(choix),computer;
+        return playerStart(choix,computer);
     }
 }
 
 
-function playerStart(choix){
+function playerStart(choix,computer){
     playercounter=playercounter+1
-    return boutonTableau(choix);
+    return boutonTableau(choix,computer);
 }
 
-
-function computerStart(computer){
+function computerStart(computer,choix){
     computercount=computercount+1
-    return boutonTableau(computer);
+    return boutonTableau(computer,choix);
 }
 
 function testmat(x,y,choix,computer){ // x => La hauteur dans mon tableau.
@@ -126,32 +130,35 @@ function testmat(x,y,choix,computer){ // x => La hauteur dans mon tableau.
     else
         grid[x][y]=choix;
     console.log(grid);
-    console.log(computercount);
+    console.log(choix);
     console.log(playercounter);
+    console.log(computer);
+    console.log(computercount);
     if (computercount>=playercounter){
-        playerStart(choix);
+        playerStart(choix,computer);
     }
     else if (playercounter>computercount){
-        computerStart(computer);
+        computerStart(computer,choix);
     }
 }
 
-function boutonTableau(choix){
+
+function boutonTableau(choix,computer){
 let G1= document.getElementById("1");
 G1.onclick=function () {
     console.log(1);
     G1.style.background="red";
-    return testmat(0,0,choix);}
+    return testmat(0,0,choix,computer);}
 
 let M1= document.getElementById("2");
     M1.onclick=function () {
         console.log(1);
-        return testmat(0,1,choix);}
+        return testmat(0,1,choix,computer);}
 
 let D1= document.getElementById("3");
     D1.onclick=function () {
         console.log(1);
-        return testmat(0,2,choix);}
+        return testmat(0,2,choix,computer);}
 
 let G2= document.getElementById("4");
     G2.onclick=function () {
